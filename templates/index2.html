@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Заполнить анкету</title>
+  </head>
+  <body>
+    <main>
+      <div class="img-container">
+        <div class="img-content">
+          <img src="https://www.cdek.ru/storage/source/components/LandingCover/1/l7qiAdpRBc_kSgetQjES23IhlAj5dYH9.png">
+          <a class="link" href="#scrollTo">Заполнить анкету</a>
+        </div>
+      </div>
+      <div class="base-container" id="scrollTo">
+        <h1 class="main-heading">Заключить договор</h1>
+        <p class="main-heading-descripiton">
+          В ближайшее время с вами свяжется закреплённый менеджер. По всем
+          интересующим вопросам можете обращаться по телефону: +7 (915)
+          242-21-84.
+        </p>
+        <form id="form1" method="post" action="{{ url_for('landing') }}">
+          <div class="form-group litso">
+            <h3 class="group-title">Лицо</h3>
+            <div class="form-row">
+              <span class="form-row-title">Отправитель</span>
+              <div class="input-row">
+                <input
+                  type="radio"
+                  id="senderChoice1"
+                  name="sender"
+                  value="entity"
+                  checked
+                />
+                <label for="senderChoice1">Юр. лицо</label>
+              </div>
+              <div class="input-row">
+                <input
+                  type="radio"
+                  id="senderChoice2"
+                  name="sender"
+                  value="entrepreneur"
+                />
+                <label for="senderChoice2">ИП</label>
+              </div>
+              <div class="input-row">
+                <input
+                  type="radio"
+                  id="senderChoice3"
+                  name="sender"
+                  value="citizen"
+                />
+                <label for="senderChoice3">Самозанятый гражданин</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-1-first">
+            <div class="form-group">
+            <h3 class="group-title data">Данные</h3>
+            <div class="form-row" id="entityRowId">
+              <span class="form-row-title">Наименование</span>
+              <div class="input-row">
+                <input
+                  type="text"
+                  id="entity-name"
+                  name="entity-name"
+                  placeholder="Введите название"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-row" id="innRowId">
+              <span class="form-row-title">ИНН</span>
+              <div class="input-row">
+                <input
+                  type="text"
+                  id="inn"
+                  name="inn"
+                  placeholder="Введите номер"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-row" id="addressRowId">
+              <span class="form-row-title">Фактический адрес отличается?</span>
+              <div class="input-row">
+                <input
+                  type="radio"
+                  id="entityChoice1"
+                  name="entity-address"
+                  value="different"
+                />
+                <label for="entityChoice1">Отличается</label>
+              </div>
+              <div class="input-row">
+                <input
+                  type="radio"
+                  id="entityChoice2"
+                  name="entity-address"
+                  value="same"
+                  checked
+                />
+                <label for="entityChoice2">Не отличается</label>
+              </div>
+            </div>
+            <div class="form-row">
+              <span class="form-row-title"
+                >Номер свидетельства <span class="not-necessary">(не обязательно)</span></span
+              >
+              <div class="input-row">
+                <input
+                  type="text"
+                  id="cert-number"
+                  name="cert-number"
+                  placeholder="Введите номер"
+                />
+              </div>
+            </div>
+            <div class="form-row">
+              <span class="form-row-title"
+                >Дата выдачи свидетельства <span class="not-necessary">(не обязательно)</span></span
+              >
+              <div class="input-row">
+                <input
+                  type="date"
+                  id="cert-date"
+                  name="cert-date"
+                  placeholder="Введите дату"
+                />
+              </div>
+            </div>
+            <div class="form-row">
+              <span class="form-row-title">БИК банка</span>
+              <div class="input-row">
+                <input
+                  type="text"
+                  id="bik"
+                  name="bik"
+                  placeholder="Введите БИК"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-row">
+              <span class="form-row-title">Расчетный счет</span>
+              <div class="input-row">
+                <input
+                  type="text"
+                  id="account"
+                  name="account"
+                  placeholder="Введите номер"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-row">
+              <span class="form-row-title">ФИО заполнителя анкеты</span>
+              <div class="input-row">
+                <input type="text" id="fio-filler" name="fio-filler" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <span class="form-row-title">ФИО директора</span>
+              <div class="input-row">
+                <input
+                  type="text"
+                  id="fio_director"
+                  name="fio_director"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-row">
+              <span class="form-row-title">Основания действий директора</span>
+              <div class="input-row">
+                <input
+                  type="text"
+                  id="director_reason"
+                  name="director_reason"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-row telephone" id="phone-row-1">
+              <span class="form-row-title">Телефон</span>
+              <div class="input-row">
+                <input type="text" id="phone1" name="phone" required />
+              </div>
+            </div>
+            <button type="button" id="add-phone-btn">
+              Дополнительный телефон
+            </button>
+            <div class="form-row telephone is-hidden" id="phone-row-2">
+              <div class="input-row">
+                <input type="text" id="phone2" name="phone" />
+                <button
+                  type="button"
+                  id="remove-phone-2"
+                  onclick="deletePhoneRow2()"
+                >
+                  Удалить телефон
+                </button>
+              </div>
+            </div>
+            <div class="form-row telephone is-hidden" id="phone-row-3">
+              <div class="input-row">
+                <input type="text" id="phone3" name="phone" />
+                <button
+                  type="button"
+                  id="remove-phone-3"
+                  onclick="deletePhoneRow3()"
+                >
+                  Удалить телефон
+                </button>
+              </div>
+            </div>
+            <div class="form-row email">
+              <span class="form-row-title">Email</span>
+              <div class="input-row">
+                <input
+                  type="email"
+                  id="email1"
+                  name="email"
+                  placeholder="Укажите email"
+                  required
+                />
+              </div>
+            </div>
+            <button type="button" id="add-email-btn">
+              Дополнительный email
+            </button>
+            <div class="form-row email is-hidden" id="email-row-2">
+              <div class="input-row">
+                <input type="email" id="email2" name="email" />
+                <button
+                  type="button"
+                  id="remove-email-2"
+                  onclick="deleteEmailRow2()"
+                >
+                  Удалить email
+                </button>
+              </div>
+            </div>
+            <div class="form-row email is-hidden" id="email-row-3">
+              <div class="input-row">
+                <input type="email" id="email3" name="email" />
+                <button
+                  type="button"
+                  id="remove-email-3"
+                  onclick="deleteEmailRow3()"
+                >
+                  Удалить email
+                </button>
+              </div>
+            </div>
+            <div class="form-row" id="webShopRowId">
+              <span class="form-row-title">Интернет магазин?</span>
+              <div class="input-row">
+                <input
+                  type="radio"
+                  id="webshopChoice1"
+                  name="web-shop"
+                  value="yes"
+                />
+                <label for="webshopChoice1">Да</label>
+              </div>
+              <div class="input-row">
+                <input
+                  type="radio"
+                  id="webshopChoice2"
+                  name="web-shop"
+                  value="no"
+                  checked
+                />
+                <label for="webshopChoice2">Нет</label>
+              </div>
+            </div>
+            <div class="form-row">
+              <span class="form-row-title">Комментарий <span class="not-necessary">(не обязательно)</span></span>
+              <div class="input-row">
+                <textarea
+                  id="comment-textarea"
+                  name="comment-textarea"
+                ></textarea>
+              </div>
+            </div>
+            </div>
+            <div class="submit-btn">
+              <p>Отправляя эту анкету вы подтверждаете ознакомление с 
+                <a href="https://www.cdek.ru/ru/privacy_policy" target="_blank">политикой конфиденциальности</a>.
+              </p>
+
+            </div>
+            <button type="submit">Отправить</button>
+        </form>
+      </div>
+    </main>
+  </body>
+  <script src="scripts.js"></script>
+  <script src="https://unpkg.com/imask"></script>
+</html>
