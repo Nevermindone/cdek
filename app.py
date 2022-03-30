@@ -18,7 +18,7 @@ mail_settings = {
     "MAIL_USE_TLS": False,
     "MAIL_USE_SSL": True,
     "MAIL_USERNAME": 'alexandr.jri.bystrov@gmail.com',
-    "MAIL_PASSWORD": 'gfdmezsklffhthxm'
+    "MAIL_PASSWORD": '****'
 }
 
 app.config.update(mail_settings)
